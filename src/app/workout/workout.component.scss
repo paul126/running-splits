@@ -1,0 +1,51 @@
+ul {
+  display: block;
+  padding-top: 70px;
+}
+
+.runner-row, .training-toolbar {
+  display: block;
+  width: 100%;
+  min-width: 700px;
+}
+
+.training-toolbar {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #cccccc;
+  z-index: 5000;
+}
+
+.training-toolbar > .btn-run {
+  font-size: 22px;
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+
+
+.training-toolbar > .btn-stop {
+  float: right;
+  margin-right: 20px;
+}
+
+.training-toolbar > .btn-run > i {
+  font-size: 18px;
+}
+
+.runner-row-segment {
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+.runner-select {
+  text-align: center;
+}
+
+.segment-spacer {
+  display: inline-block;
+  width: 42px;
+}

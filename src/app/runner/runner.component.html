@@ -1,0 +1,25 @@
+<ul class="group">
+  <li>
+    <input type="text" name="runnerName" placeholder="enter name" [(ngModel)]="runner.name">
+  <li>
+    <button class="btn-run btn-start" (click)="runner.startTimer()" *ngIf="!runner.isRunning()">
+      <i class="material-icons">alarm</i>
+    </button>
+  </li>
+  <li>
+    <button class="btn-run btn-stop" (click)="runner.stopSplit()" *ngIf="runner.isRunning()">
+      <i class="material-icons">alarm_off</i>
+    </button>
+  </li>
+  <li class="last-split">
+    {{ runner.displaySplit }}
+  </li>
+  <li>
+    <button class="btn-run btn-start" (click)="runner.addLap()" *ngIf="runner.isRunning()">
+      <i class="material-icons">alarm_on</i>
+    </button>
+  </li>
+  <li class="last-split">
+    {{ runner.displayLap }}
+  </li>
+</ul>

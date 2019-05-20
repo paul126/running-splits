@@ -1,0 +1,38 @@
+<section class="training-toolbar group">
+  <button class="btn-run" (click)="addRunner()">
+    <i class="material-icons">add</i>
+    Add
+  </button>
+  <button class="btn-run btn-start" (click)="groupStart()">
+    <i class="material-icons">alarm</i>
+    Start {{ noRunnersSelected() ? 'All' : 'Selected' }}
+  </button>
+  <button *ngIf="!noRunnersSelected()" class="btn-run btn-stop" (click)="removeSelectedRunners()">
+    <i class="material-icons">delete_forever</i>
+    Remove Selected
+  </button>
+</section>
+<ul class="training-group-list">
+  <ng-container *ngFor="let runner of runnerList">
+    <li class="runner-row group">
+      <div class="runner-row-segment runner-select">
+        <button class="btn-run btn-transparent button-unpadded" (click)="runner.toggleSelected()">
+          <i *ngIf="runner.isSelected" class="material-icons">check_box</i>
+          <i *ngIf="!runner.isSelected" class="material-icons">check_box_outline_blank</i>
+        </button>
+      </div>
+      <div class="runner-row-segment">
+        <button class="btn-run btn-transparent button-unpadded" (click)="runner.toggleExpanded()">
+          <i *ngIf="!runner.isExpanded" class="material-icons">expand_more</i>
+          <i *ngIf="runner.isExpanded" class="material-icons">expand_less</i>
+        </button>
+      </div>
+      <div class="runner-row-segment">
+        <app-runner [runner]="runner"></app-runner>
+      </div>
+    </li>
+    <li *ngIf="runner.isExpanded" class="runner-row group">
+      <app-split-details [runner]="runner"></app-split-details>
+    </li>
+  </ng-container>
+</ul>

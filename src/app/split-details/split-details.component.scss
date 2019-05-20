@@ -1,0 +1,18 @@
+ul > li {
+  display: block;
+}
+
+.split-segment {
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+input {
+  text-align: center;
+  width: 100px;
+}
+
+.split-time, .lap-time {
+  padding: 20px 0 20px 10px;
+}

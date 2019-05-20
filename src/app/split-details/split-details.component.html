@@ -1,0 +1,18 @@
+<ul>
+  <li *ngFor="let split of runner.splitList" class="group">
+    <div class="split-segment">
+      <input type="text" name="splitLabel" placeholder="enter label" [(ngModel)]="split.label">
+    </div>
+    <div class="split-segment split-time">
+      {{ split.formattedTime }}
+    </div>
+    <div class="split-segment lap-time">
+      Laps: {{ lapList(split) }}
+    </div>
+  </li>
+  <li class="group">
+    <div class="split-segment split-time" *ngIf="runner.noSplits()">
+      {{ runner.name }} doesn't have any splits yet.
+    </div>
+  </li>
+</ul>
